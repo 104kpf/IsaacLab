@@ -5,6 +5,20 @@ FROM isaac-lab-base AS ros2
 # Which ROS2 apt package to install
 ARG ROS2_APT_PACKAGE
 
+RUN --mount=type=cache,target=/var/cache/apt \
+    apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    software-properties-common && \
+    add-apt-repository universe && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    git \
+    unzip \
+    libfreetype6-dev \
+    libfontconfig1-dev
+
 # ROS2 Humble Apt installations
 RUN --mount=type=cache,target=/var/cache/apt \
     apt-get update && apt-get install -y --no-install-recommends \

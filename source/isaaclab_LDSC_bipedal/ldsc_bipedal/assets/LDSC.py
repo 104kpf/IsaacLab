@@ -20,7 +20,7 @@ from isaaclab.utils.assets import ISAACLAB_NUCLEUS_DIR
 
 BIPEDAL_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"/workspace/isaaclab/Robots/LDSC_bipedal/bipedal.usd",
+        usd_path=f"/workspace/isaaclab/source/isaaclab_LDSC_bipedal/ldsc_bipedal/assets/Robots/bipedal.usd",
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,

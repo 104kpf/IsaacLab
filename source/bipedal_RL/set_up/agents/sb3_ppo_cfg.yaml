@@ -1,0 +1,25 @@
+# Reference: https://github.com/DLR-RM/rl-baselines3-zoo/blob/master/hyperparams/ppo.yml#L32
+seed: 42
+
+n_timesteps: !!float 1e6
+policy: 'MlpPolicy'
+n_steps: 16   #每個scene各跑16個timestep後更新agent
+batch_size: 2048  #4096
+gae_lambda: 0.95
+gamma: 0.99
+n_epochs: 20
+ent_coef: 0.05
+learning_rate: !!float 1e-3
+clip_range: !!float 0.25
+policy_kwargs: "dict(
+                  activation_fn=nn.ELU,
+                  net_arch=[256, 128, 128],
+                  squash_output=False,
+                )"
+vf_coef: 0.7
+max_grad_norm: 1.0
+device: "cuda:0"
+
+normalize_input: True    # 標準化觀測值
+normalize_value: True
+
